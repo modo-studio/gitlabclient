@@ -1,15 +1,10 @@
 COMMIT_MESSAGE = "Bump podspec to"
 
-lane :pods do
-  cocoapods(podfile: "Example/")
-end
-
 lane :tests do
   scan(workspace: "Example/gitlabclient.xcworkspace", scheme: "gitlabclient-Example", clean: true)
 end
 
 lane :ci do
-  pods
   tests
 end
 

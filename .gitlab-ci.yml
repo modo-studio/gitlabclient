@@ -1,6 +1,6 @@
 before_script:
   - bundle install
-  # - brew bundle
+  - bundle exec pod install --project-directory=Example
 stages:
   - test
   - deploy
