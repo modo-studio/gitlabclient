@@ -1,0 +1,13 @@
+before_script:
+  - bundle install
+  - brew bundle
+stages:
+  - test
+test:
+  script:
+    - bundle exec fastlane ci
+  artifacts:
+    paths:
+    - fastlane/**/*.xml
+    - fastlane/**/*.junit
+    - fastlane/**/*.html

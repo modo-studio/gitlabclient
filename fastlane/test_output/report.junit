@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='gitlabclient_Tests.xctest' tests='2' failures='0'>
+  <testsuite name='gitlabclient_Tests.Tests' tests='2' failures='0'>
+    <testcase classname='gitlabclient_Tests.Tests' name='testExample' time='0.002'/>
+    <testcase classname='gitlabclient_Tests.Tests' name='testPerformanceExample' time='0.443'/>
+  </testsuite>
+</testsuites>

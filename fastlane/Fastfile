@@ -8,10 +8,9 @@ lane :tests do
   scan(workspace: "Example/gitlabclient.xcworkspace", scheme: "gitlabclient-Example", clean: true)
 end
 
-lane :travis do
+lane :ci do
   pods
   tests
-  danger
 end
 
 lane :push do

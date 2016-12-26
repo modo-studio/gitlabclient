@@ -1,22 +1,37 @@
 {
   "name": "gitlabclient",
-  "version": "0.1.0",
-  "summary": "A short description of gitlabclient.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/gitlabclient",
+  "version": "0.0.1",
+  "summary": "GitLab API client written in Swift",
+  "description": "GitLab API Swift client.",
+  "homepage": "https://gitlab.com/caramba/gitlabclient",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Pedro Piñera Buendía": "pepibumur@gmail.com"
+    "Caramba.io": "hello@caramba.io"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/gitlabclient.git",
-    "tag": "0.1.0"
+    "git": "https://gitlab.com/caramba/gitlabclient.git",
+    "tag": "0.0.1"
   },
+  "social_media_url": "https://twitter.com/carambalabs",
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "osx": "10.10",
+    "tvos": "9.0",
+    "watchos": "2.0"
   },
-  "source_files": "gitlabclient/Classes/**/*"
+  "source_files": "gitlabclient/Classes/**/*",
+  "dependencies": {
+    "Unbox": [
+      "~> 2.3"
+    ],
+    "Result": [
+      "~> 3.1"
+    ],
+    "HTTPStatusCodes": [
+      "~> 3.1"
+    ]
+  }
 }
