@@ -9,7 +9,6 @@ lane :ci do
 end
 
 lane :push do
-  ensure_git_branch
   version = version_bump_podspec(path: "gitlabclient.podspec")
   git_commit(path: ["./gitlabclient.podspec", "./Example/Podfile.lock"], message: "#{COMMIT_MESSAGE} #{version}")
   changelog = changelog_from_git_commits
