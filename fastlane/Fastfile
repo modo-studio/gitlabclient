@@ -14,7 +14,7 @@ lane :push do
   sh("git fetch --tags")
   sh("git tag #{version}")
   gl_token = ENV["GL_TOKEN"]
-  sh("git remote set-url origin 'https://#{gl_token}@gitlab.com/caramba/gitlabclient.git'")
+  sh("git remote set-url origin 'git@gitlab.com:caramba/gitlabclient.git'")
   sh("git push origin HEAD:master --tags")
   pod_push(allow_warnings: true, verbose: true)
 end
