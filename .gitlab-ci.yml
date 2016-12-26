@@ -3,6 +3,13 @@ before_script:
   - brew bundle
 stages:
   - test
+  - deploy
+deploy:
+  script:
+    - bundle exec fastlane push
+  when: manual
+  only:
+    - master
 test:
   script:
     - bundle exec fastlane ci
