@@ -1,6 +1,12 @@
-import UIKit
+//
+//  Tests.swift
+//  Tests
+//
+//  Created by Pedro Pinera Buendia on 26/12/16.
+//  Copyright © 2016 CocoaPods. All rights reserved.
+//
+
 import XCTest
-import gitlabclient
 
 class Tests: XCTestCase {
     
@@ -16,12 +22,12 @@ class Tests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure() {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

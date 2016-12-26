@@ -1,6 +1,6 @@
 {
   "name": "gitlabclient",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "GitLab API client written in Swift",
   "description": "GitLab API Swift client.",
   "homepage": "https://gitlab.com/caramba/gitlabclient",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://gitlab.com/caramba/gitlabclient.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "social_media_url": "https://twitter.com/carambalabs",
   "platforms": {

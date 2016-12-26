@@ -1,6 +1,4 @@
 use_frameworks!
-target 'gitlabclient_Tests' do
+target 'Tests' do
   pod 'gitlabclient', :path => '../'
-  
-  
 end

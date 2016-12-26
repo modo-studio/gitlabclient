@@ -1,7 +1,14 @@
 COMMIT_MESSAGE = "Bump podspec to"
 
 lane :tests do
-  scan(workspace: "Example/gitlabclient.xcworkspace", scheme: "gitlabclient-Example", clean: true)
+  scan(output_types: "html, junit", 
+    workspace: "Example/gitlabclient.xcworkspace", 
+    scheme: "Tests", 
+    verbose: true, 
+    clean: true, 
+    destination: "platform=macOS,arch=x86_64",
+    sdk: "macosx10.12",
+    xcargs: "ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=\"\"")
 end
 
 lane :ci do
