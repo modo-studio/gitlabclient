@@ -1,12 +1,17 @@
+cache:
+  paths:
+  - Example/Pods
 before_script:
   - bundle install
   - bundle exec pod install --project-directory=Example
 stages:
   - test
   - deploy
-deploy:
+deploy_cocoapods:
   script:
     - bundle exec fastlane push
+  environment:
+    name: cocoapods
   when: manual
   only:
     - master
