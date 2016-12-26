@@ -1,6 +1,6 @@
 before_script:
   - bundle install
-  - brew bundle
+  # - brew bundle
 stages:
   - test
   - deploy
