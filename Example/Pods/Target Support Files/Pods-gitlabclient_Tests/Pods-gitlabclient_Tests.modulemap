@@ -1,0 +1,6 @@
+framework module Pods_gitlabclient_Tests {
+  umbrella header "Pods-gitlabclient_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - gitlabclient (0.1.0)
+
+DEPENDENCIES:
+  - gitlabclient (from `../`)
+
+EXTERNAL SOURCES:
+  gitlabclient:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  gitlabclient: 0e50e4b150fb96b2be13d89511d66885877b6887
+
+PODFILE CHECKSUM: 2e915e24d146f02487fd8f72e02a8fe0faa1d158
+
+COCOAPODS: 1.1.1

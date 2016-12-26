@@ -1,0 +1,6 @@
+framework module gitlabclient {
+  umbrella header "gitlabclient-umbrella.h"
+
+  export *
+  module * { export * }
+}
