@@ -2,7 +2,7 @@ GitLab Client
 ==============
 Swift Client for GitLab
 
-[![CI Status](http://img.shields.io/travis/Pedro Piñera Buendía/gitlabclient.svg?style=flat)](https://travis-ci.org/Pedro Piñera Buendía/gitlabclient)
+[![build status](https://gitlab.com/caramba/gitlabclient/badges/master/build.svg)](https://gitlab.com/caramba/gitlabclient/commits/master)
 [![Version](https://img.shields.io/cocoapods/v/gitlabclient.svg?style=flat)](http://cocoapods.org/pods/gitlabclient)
 [![License](https://img.shields.io/cocoapods/l/gitlabclient.svg?style=flat)](http://cocoapods.org/pods/gitlabclient)
 [![Platform](https://img.shields.io/cocoapods/p/gitlabclient.svg?style=flat)](http://cocoapods.org/pods/gitlabclient)
