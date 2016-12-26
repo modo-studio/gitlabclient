@@ -10,8 +10,7 @@ stages:
 deploy_cocoapods:
   script:
     - bundle exec fastlane push
-  environment:
-    name: cocoapods
+  environment: cocoapods
   when: manual
   only:
     - master
