@@ -56,7 +56,6 @@ public struct Build: Unboxable {
         self.userId = try unboxer.unbox(key: "user.id")
         self.userAvatarUrl = unboxer.unbox(key: "user.avatar_url")
         self.userWebUrl = try unboxer.unbox(key: "user.web_url")
-        
         self.commitId = unboxer.unbox(key: "commit.id")
         self.commitShortId = unboxer.unbox(key: "commit.short_id")
         self.commitTitle = unboxer.unbox(key: "commit.title")
@@ -75,6 +74,87 @@ public struct Build: Unboxable {
         self.pipelineSha = unboxer.unbox(key: "pipeline.sha")
         self.pipelineRef = unboxer.unbox(key: "pipeline.ref")
         self.pipelineStatus = unboxer.unbox(key: "pipeline.status")
+    }
+    
+}
+
+public extension Build {
+    
+    static func list(projectId: String,
+                     page: Int = 1,
+                     perPage: Int = 20) -> Resource<[Build]> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/builds"
+            mutable.queryItems = [
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "per_page", value: "\(perPage)")
+            ]
+            return URLRequest(url: mutable.url!)
+        })
+    }
+    
+    static func listCommitBuilds(projectId: String,
+                                 commitSha: String,
+                                 page: Int = 1,
+                                 perPage: Int = 20) -> Resource<[Build]> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/repository/commits/\(commitSha)/builds"
+            mutable.queryItems = [
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "per_page", value: "\(perPage)")
+            ]
+            return URLRequest(url: mutable.url!)
+        })
+    }
+    
+    static func get(projectId: String, buildId: String) -> Resource<Build> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/builds/\(buildId)"
+            return URLRequest(url: mutable.url!)
+        })
+    }
+    
+    static func cancel(projectId: String, buildId: String) -> Resource<Build> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/builds/\(buildId)/cancel"
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
+    }
+    
+    static func retry(projectId: String, buildId: String) -> Resource<Build> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/builds/\(buildId)/retry"
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
+    }
+    
+    static func erase(projectId: String, buildId: String) -> Resource<Build> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/builds/\(buildId)/erase"
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
+    }
+    
+    static func play(projectId: String, buildId: String) -> Resource<Build> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/builds/\(buildId)/play"
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
     }
     
 }
