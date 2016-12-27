@@ -5,7 +5,7 @@ public struct Build: Unboxable {
     
     // MARK: - Properties
     
-    public let id: String
+    public let id: Int
     public let status: String
     public let stage: String
     public let name: String

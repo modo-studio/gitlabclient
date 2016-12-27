@@ -5,7 +5,7 @@ public struct Pipeline: Unboxable {
     
     // MARK: - Properties
     
-    public let id: String
+    public let id: Int
     public let sha: String
     public let ref: String
     public let status: String
@@ -46,4 +46,63 @@ public struct Pipeline: Unboxable {
         self.duration = try unboxer.unbox(key: "duration")
     }
 
+}
+
+public extension Pipeline {
+    
+    static func list(projectId: String,
+                     page: Int = 1,
+                     perPage: Int = 20) -> Resource<[Pipeline]> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/pipelines"
+            mutable.queryItems = [
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "per_page", value: "\(perPage)")
+            ]
+            return URLRequest(url: mutable.url!)
+        })
+    }
+    
+    static func get(projectId: String, pipelineId: String) -> Resource<Pipeline> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/pipelines/\(pipelineId)"
+            return URLRequest(url: mutable.url!)
+        })
+    }
+    
+    static func create(projectId: String, ref: String) -> Resource<Pipeline> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/pipelines"
+            mutable.queryItems = [
+                URLQueryItem(name: "ref", value: ref),
+            ]
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
+    }
+    
+    static func retryBuilds(projectId: String, pipelineId: String) -> Resource<Pipeline> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/pipelines/\(pipelineId)/retry"
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
+    }
+    
+    static func cancelBuilds(projectId: String, pipelineId: String) -> Resource<Pipeline> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(projectId)/pipelines/\(pipelineId)/cancel"
+            var request = URLRequest(url: mutable.url!)
+            request.httpMethod = "POST"
+            return request
+        })
+    }
+    
 }

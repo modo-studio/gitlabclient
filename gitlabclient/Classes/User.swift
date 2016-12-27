@@ -7,7 +7,7 @@ public struct User: Unboxable {
     
     public let name: String
     public let username: String
-    public let id: String
+    public let id: Int
     public let active: Bool
     public let avatarUrl: URL?
     public let isAdmin: Bool

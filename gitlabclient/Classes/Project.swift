@@ -5,7 +5,7 @@ public struct Project: Unboxable {
     
     // MARK: - Properties
     
-    public let id: String
+    public let id: Int
     public let description: String?
     public let defaultBranch: String
     public let isPublic: Bool

@@ -5,7 +5,7 @@ public struct Namespace: Unboxable {
     
     // MARK: - Properties
     
-    public let id: String
+    public let id: Int
     public let name: String
     public let path: String
     public let ownerId: String?
