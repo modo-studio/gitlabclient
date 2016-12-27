@@ -36,9 +36,9 @@ public struct Namespace: Unboxable {
     
 }
 
-extension Namespace {
+public extension Namespace {
     
-    static func list(page: Int = 1,
+    public static func list(page: Int = 1,
                      perPage: Int = 20) -> Resource<[Namespace]> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
@@ -51,7 +51,7 @@ extension Namespace {
         })
     }
     
-    static func search(query: String,
+    public static func search(query: String,
                        page: Int = 1,
                        perPage: Int = 20) -> Resource<[Namespace]> {
         return Resource(request: { (components) -> URLRequest in

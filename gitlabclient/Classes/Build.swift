@@ -80,7 +80,7 @@ public struct Build: Unboxable {
 
 public extension Build {
     
-    static func list(projectId: String,
+    public static func list(projectId: String,
                      page: Int = 1,
                      perPage: Int = 20) -> Resource<[Build]> {
         return Resource(request: { (components) -> URLRequest in
@@ -94,7 +94,7 @@ public extension Build {
         })
     }
     
-    static func listCommitBuilds(projectId: String,
+    public static func listCommitBuilds(projectId: String,
                                  commitSha: String,
                                  page: Int = 1,
                                  perPage: Int = 20) -> Resource<[Build]> {
@@ -109,7 +109,7 @@ public extension Build {
         })
     }
     
-    static func get(projectId: String, buildId: String) -> Resource<Build> {
+    public static func get(projectId: String, buildId: String) -> Resource<Build> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/builds/\(buildId)"
@@ -117,7 +117,7 @@ public extension Build {
         })
     }
     
-    static func cancel(projectId: String, buildId: String) -> Resource<Build> {
+    public static func cancel(projectId: String, buildId: String) -> Resource<Build> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/builds/\(buildId)/cancel"
@@ -127,7 +127,7 @@ public extension Build {
         })
     }
     
-    static func retry(projectId: String, buildId: String) -> Resource<Build> {
+    public static func retry(projectId: String, buildId: String) -> Resource<Build> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/builds/\(buildId)/retry"
@@ -137,7 +137,7 @@ public extension Build {
         })
     }
     
-    static func erase(projectId: String, buildId: String) -> Resource<Build> {
+    public static func erase(projectId: String, buildId: String) -> Resource<Build> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/builds/\(buildId)/erase"
@@ -147,7 +147,7 @@ public extension Build {
         })
     }
     
-    static func play(projectId: String, buildId: String) -> Resource<Build> {
+    public static func play(projectId: String, buildId: String) -> Resource<Build> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/builds/\(buildId)/play"

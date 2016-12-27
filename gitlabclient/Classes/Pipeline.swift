@@ -50,7 +50,7 @@ public struct Pipeline: Unboxable {
 
 public extension Pipeline {
     
-    static func list(projectId: String,
+    public static func list(projectId: String,
                      page: Int = 1,
                      perPage: Int = 20) -> Resource<[Pipeline]> {
         return Resource(request: { (components) -> URLRequest in
@@ -64,7 +64,7 @@ public extension Pipeline {
         })
     }
     
-    static func get(projectId: String, pipelineId: String) -> Resource<Pipeline> {
+    public static func get(projectId: String, pipelineId: String) -> Resource<Pipeline> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/pipelines/\(pipelineId)"
@@ -72,7 +72,7 @@ public extension Pipeline {
         })
     }
     
-    static func create(projectId: String, ref: String) -> Resource<Pipeline> {
+    public static func create(projectId: String, ref: String) -> Resource<Pipeline> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/pipelines"
@@ -85,7 +85,7 @@ public extension Pipeline {
         })
     }
     
-    static func retryBuilds(projectId: String, pipelineId: String) -> Resource<Pipeline> {
+    public static func retryBuilds(projectId: String, pipelineId: String) -> Resource<Pipeline> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/pipelines/\(pipelineId)/retry"
@@ -95,7 +95,7 @@ public extension Pipeline {
         })
     }
     
-    static func cancelBuilds(projectId: String, pipelineId: String) -> Resource<Pipeline> {
+    public static func cancelBuilds(projectId: String, pipelineId: String) -> Resource<Pipeline> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(projectId)/pipelines/\(pipelineId)/cancel"

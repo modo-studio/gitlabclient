@@ -81,3 +81,124 @@ public struct Project: Unboxable {
     }
     
 }
+
+public extension Project {
+    
+    public static func list(archived: Bool?,
+                            visibility: String? = nil,
+                            orderBy: String? = nil,
+                            sort: String = "desc",
+                            search: String? = nil,
+                            page: Int = 1,
+                            perPage: Int = 20) -> Resource<[Project]> {
+        return listResource(path: "/projects",
+                            archived: archived,
+                            visibility: visibility,
+                            orderBy: orderBy,
+                            sort: sort,
+                            search: search,
+                            page: page,
+                            perPage: perPage)
+    }
+    
+    public static func listVisible(archived: Bool?,
+                                   visibility: String? = nil,
+                                   orderBy: String? = nil,
+                                   sort: String = "desc",
+                                   search: String? = nil,
+                                   page: Int = 1,
+                                   perPage: Int = 20) -> Resource<[Project]> {
+        return listResource(path: "/projects/visible",
+                            archived: archived,
+                            visibility: visibility,
+                            orderBy: orderBy,
+                            sort: sort,
+                            search: search,
+                            page: page,
+                            perPage: perPage)
+    }
+    
+    public static func listOwned(archived: Bool?,
+                                 visibility: String? = nil,
+                                 orderBy: String? = nil,
+                                 sort: String = "desc",
+                                 search: String? = nil,
+                                 page: Int = 1,
+                                 perPage: Int = 20) -> Resource<[Project]> {
+        return listResource(path: "/projects/owned",
+                            archived: archived,
+                            visibility: visibility,
+                            orderBy: orderBy,
+                            sort: sort,
+                            search: search,
+                            page: page,
+                            perPage: perPage)
+    }
+    
+    public static func listStarred(archived: Bool?,
+                                   visibility: String? = nil,
+                                   orderBy: String? = nil,
+                                   sort: String = "desc",
+                                   search: String? = nil,
+                                   page: Int = 1,
+                                   perPage: Int = 20) -> Resource<[Project]> {
+        return listResource(path: "/projects/starred",
+                            archived: archived,
+                            visibility: visibility,
+                            orderBy: orderBy,
+                            sort: sort,
+                            search: search,
+                            page: page,
+                            perPage: perPage)
+    }
+    
+    public static func listAll(archived: Bool?,
+                               visibility: String? = nil,
+                               orderBy: String? = nil,
+                               sort: String = "desc",
+                               search: String? = nil,
+                               page: Int = 1,
+                               perPage: Int = 20) -> Resource<[Project]> {
+        return listResource(path: "/projects/all",
+                            archived: archived,
+                            visibility: visibility,
+                            orderBy: orderBy,
+                            sort: sort,
+                            search: search,
+                            page: page,
+                            perPage: perPage)
+    }
+    
+    private static func listResource(path: String,
+                                     archived: Bool?,
+                                     visibility: String? = nil,
+                                     orderBy: String? = nil,
+                                     sort: String = "desc",
+                                     search: String? = nil,
+                                     page: Int = 1,
+                                     perPage: Int = 20) -> Resource<[Project]> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = path
+            var queryItems = [
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "per_page", value: "\(perPage)")
+            ]
+            if let archived = archived { queryItems.append(URLQueryItem(name: "archived", value: "\(archived)")) }
+            if let visibility = visibility { queryItems.append(URLQueryItem(name: "visibility", value: visibility)) }
+            if let orderBy = orderBy { queryItems.append(URLQueryItem(name: "order_by", value: orderBy)) }
+            queryItems.append(URLQueryItem(name: "sort", value: sort))
+            if let search = search { queryItems.append(URLQueryItem(name: "search", value: "\(search)")) }
+            return URLRequest(url: mutable.url!)
+        })
+    }
+    
+    static func get(id: String) -> Resource<Project> {
+        return Resource(request: { (components) -> URLRequest in
+            var mutable = components
+            mutable.path = "/projects/\(id)"
+            return URLRequest(url: mutable.url!)
+        })
+    }
+}
+    
