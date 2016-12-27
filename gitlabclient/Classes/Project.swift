@@ -30,7 +30,7 @@ public struct Project: Unboxable {
     public let lfsEnabled: Bool
     public let creatorId: String
     public let namespace: Namespace?
-    public let avatarUrl: String?
+    public let avatarUrl: URL?
     public let starsCount: UInt
     public let forksCount: UInt
     public let openIssuesCount: UInt

@@ -16,6 +16,8 @@
 		238E488E1E13172D00C1425C /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E488D1E13172D00C1425C /* Namespace.swift */; };
 		238E48901E13193800C1425C /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E488F1E13193800C1425C /* Client.swift */; };
 		238E48921E13197900C1425C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E48911E13197900C1425C /* Response.swift */; };
+		238E48941E131DC000C1425C /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E48931E131DC000C1425C /* Pipeline.swift */; };
+		238E48961E1325BF00C1425C /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E48951E1325BF00C1425C /* Build.swift */; };
 		3078B60A45291938FC5B5EAB5C18F962 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA44943BC72220ED602D87FB6911D0C /* Foundation.framework */; };
 		35A8D00D01CC43D35E4B1454357469CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C6D22578D44027F60846A92CE033FF /* Cocoa.framework */; };
 		3BA4BB7DE262DEC02C3DAD717DC2C095 /* HTTPStatusCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7D0183E86748082676DF531C4A19C2 /* HTTPStatusCodes.framework */; };
@@ -112,6 +114,8 @@
 		238E488D1E13172D00C1425C /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
 		238E488F1E13193800C1425C /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		238E48911E13197900C1425C /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		238E48931E131DC000C1425C /* Pipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
+		238E48951E1325BF00C1425C /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		23C6D22578D44027F60846A92CE033FF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		273B9112E94D1C393C77B38CE4671AE4 /* Result-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Result-umbrella.h"; sourceTree = "<group>"; };
 		2C8AAD97E22D7F6B08B73B0AE02BFA6D /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 				238E488D1E13172D00C1425C /* Namespace.swift */,
 				238E488F1E13193800C1425C /* Client.swift */,
 				238E48911E13197900C1425C /* Response.swift */,
+				238E48931E131DC000C1425C /* Pipeline.swift */,
+				238E48951E1325BF00C1425C /* Build.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -629,6 +635,8 @@
 				238E48881E13128000C1425C /* User.swift in Sources */,
 				238E48921E13197900C1425C /* Response.swift in Sources */,
 				238E48861E13106500C1425C /* HeadersProvider.swift in Sources */,
+				238E48961E1325BF00C1425C /* Build.swift in Sources */,
+				238E48941E131DC000C1425C /* Pipeline.swift in Sources */,
 				238E488C1E13165A00C1425C /* Project.swift in Sources */,
 				238E488A1E13141700C1425C /* DateFormatter+GitLab.swift in Sources */,
 				238E488E1E13172D00C1425C /* Namespace.swift in Sources */,

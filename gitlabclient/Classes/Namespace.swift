@@ -11,7 +11,7 @@ public struct Namespace: Unboxable {
     public let ownerId: String?
     public let createdAt: Date
     public let updatedAt: Date?
-    public let avatarUrl: String?
+    public let avatarUrl: URL?
     public let membershipLock: Bool
     public let shareWithGroupLock: Bool
     public let visibilityLevel: UInt
