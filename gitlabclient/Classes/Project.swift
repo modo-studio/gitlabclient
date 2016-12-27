@@ -193,7 +193,7 @@ public extension Project {
         })
     }
     
-    static func get(id: String) -> Resource<Project> {
+    public static func get(id: String) -> Resource<Project> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
             mutable.path = "/projects/\(id)"
