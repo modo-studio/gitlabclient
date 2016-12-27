@@ -6,8 +6,9 @@ before_script:
   - bundle exec pod install --project-directory=Example
 stages:
   - test
-  - deploy_cocoapods
+  - deploy
 deploy_cocoapods:
+  stage: deploy
   script:
     - bundle exec fastlane push
   environment: cocoapods
