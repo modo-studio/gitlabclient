@@ -84,7 +84,7 @@ public struct Project: Unboxable {
 
 public extension Project {
     
-    public static func list(archived: Bool?,
+    public static func list(archived: Bool? = nil,
                             visibility: String? = nil,
                             orderBy: String? = nil,
                             sort: String = "desc",
@@ -101,7 +101,7 @@ public extension Project {
                             perPage: perPage)
     }
     
-    public static func listVisible(archived: Bool?,
+    public static func listVisible(archived: Bool? = nil,
                                    visibility: String? = nil,
                                    orderBy: String? = nil,
                                    sort: String = "desc",
@@ -118,7 +118,7 @@ public extension Project {
                             perPage: perPage)
     }
     
-    public static func listOwned(archived: Bool?,
+    public static func listOwned(archived: Bool? = nil,
                                  visibility: String? = nil,
                                  orderBy: String? = nil,
                                  sort: String = "desc",
@@ -135,7 +135,7 @@ public extension Project {
                             perPage: perPage)
     }
     
-    public static func listStarred(archived: Bool?,
+    public static func listStarred(archived: Bool? = nil,
                                    visibility: String? = nil,
                                    orderBy: String? = nil,
                                    sort: String = "desc",
@@ -152,7 +152,7 @@ public extension Project {
                             perPage: perPage)
     }
     
-    public static func listAll(archived: Bool?,
+    public static func listAll(archived: Bool? = nil,
                                visibility: String? = nil,
                                orderBy: String? = nil,
                                sort: String = "desc",
