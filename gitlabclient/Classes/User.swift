@@ -57,7 +57,7 @@ public extension User {
     
     static var Me: Resource<User> = Resource(request: { (components) -> URLRequest in
         var mutable = components
-        mutable.path = "/user"
+        mutable.path = "/api/v3/user"
         return URLRequest(url: mutable.url!)
     })
     

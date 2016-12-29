@@ -91,7 +91,7 @@ public extension Project {
                             search: String? = nil,
                             page: Int = 1,
                             perPage: Int = 20) -> Resource<[Project]> {
-        return listResource(path: "/projects",
+        return listResource(path: "/api/v3/projects",
                             archived: archived,
                             visibility: visibility,
                             orderBy: orderBy,
@@ -108,7 +108,7 @@ public extension Project {
                                    search: String? = nil,
                                    page: Int = 1,
                                    perPage: Int = 20) -> Resource<[Project]> {
-        return listResource(path: "/projects/visible",
+        return listResource(path: "/api/v3/projects/visible",
                             archived: archived,
                             visibility: visibility,
                             orderBy: orderBy,
@@ -125,7 +125,7 @@ public extension Project {
                                  search: String? = nil,
                                  page: Int = 1,
                                  perPage: Int = 20) -> Resource<[Project]> {
-        return listResource(path: "/projects/owned",
+        return listResource(path: "/api/v3/projects/owned",
                             archived: archived,
                             visibility: visibility,
                             orderBy: orderBy,
@@ -142,7 +142,7 @@ public extension Project {
                                    search: String? = nil,
                                    page: Int = 1,
                                    perPage: Int = 20) -> Resource<[Project]> {
-        return listResource(path: "/projects/starred",
+        return listResource(path: "/api/v3/projects/starred",
                             archived: archived,
                             visibility: visibility,
                             orderBy: orderBy,
@@ -159,7 +159,7 @@ public extension Project {
                                search: String? = nil,
                                page: Int = 1,
                                perPage: Int = 20) -> Resource<[Project]> {
-        return listResource(path: "/projects/all",
+        return listResource(path: "/api/v3/projects/all",
                             archived: archived,
                             visibility: visibility,
                             orderBy: orderBy,
@@ -196,7 +196,7 @@ public extension Project {
     public static func get(id: String) -> Resource<Project> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
-            mutable.path = "/projects/\(id)"
+            mutable.path = "/api/v3/projects/\(id)"
             return URLRequest(url: mutable.url!)
         })
     }

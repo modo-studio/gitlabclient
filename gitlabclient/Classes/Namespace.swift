@@ -42,7 +42,7 @@ public extension Namespace {
                      perPage: Int = 20) -> Resource<[Namespace]> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
-            mutable.path = "/namespaces"
+            mutable.path = "/api/v3/namespaces"
             mutable.queryItems = [
                 URLQueryItem(name: "page", value: "\(page)"),
                 URLQueryItem(name: "per_page", value: "\(perPage)")
@@ -56,7 +56,7 @@ public extension Namespace {
                        perPage: Int = 20) -> Resource<[Namespace]> {
         return Resource(request: { (components) -> URLRequest in
             var mutable = components
-            mutable.path = "/namespaces"
+            mutable.path = "/api/v3/namespaces"
             mutable.queryItems = [
                 URLQueryItem(name: "search", value: query),
                 URLQueryItem(name: "page", value: "\(page)"),
