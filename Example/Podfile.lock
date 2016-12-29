@@ -1,5 +1,5 @@
 PODS:
-  - gitlabclient (0.0.4):
+  - gitlabclient (0.0.5):
     - HTTPStatusCodes (~> 3.1)
     - Result (~> 3.1)
     - Unbox (~> 2.3)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  gitlabclient: ea0bd5076e83bb79eea4a6d1f7ff824d844deb7a
+  gitlabclient: 3d0f681c92f46f869799eef608cb108120e29d7d
   HTTPStatusCodes: e0747e2497f1c887944a306b7d7122cb2a01f553
   Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   Unbox: 5ba1966ebe99b5d568d432626323331eedd33458
