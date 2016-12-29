@@ -5,9 +5,9 @@ public struct Project: Unboxable {
     
     // MARK: - Properties
     
-    public let id: Int
+    public let id: UInt
     public let description: String?
-    public let defaultBranch: String
+    public let defaultBranch: String?
     public let isPublic: Bool
     public let archived: Bool
     public let visibilityLevel: UInt
@@ -24,16 +24,16 @@ public struct Project: Unboxable {
     public let wikiEnabled: Bool
     public let buildsEnabled: Bool
     public let snippetsEnabled: Bool
-    public let createdAt: Date
-    public let lastActivityAt: Date
+    public let createdAt: Date?
+    public let lastActivityAt: Date?
     public let sharedRunnersEnabled: Bool
     public let lfsEnabled: Bool
-    public let creatorId: String
+    public let creatorId: UInt
     public let namespace: Namespace?
     public let avatarUrl: URL?
-    public let starsCount: UInt
+    public let starCount: UInt
     public let forksCount: UInt
-    public let openIssuesCount: UInt
+    public let openIssuesCount: UInt?
     public let publicBuilds: Bool
     public let onlyAllowMergeIfBuildSucceeds: Bool
     public let requestAccessEnabled: Bool
@@ -46,7 +46,7 @@ public struct Project: Unboxable {
     public init(unboxer: Unboxer) throws {
         self.id = try unboxer.unbox(key: "id")
         self.description = unboxer.unbox(key: "description")
-        self.defaultBranch = try unboxer.unbox(key: "default_branch")
+        self.defaultBranch = unboxer.unbox(key: "default_branch")
         self.isPublic = try unboxer.unbox(key: "public")
         self.archived = try unboxer.unbox(key: "archived")
         self.visibilityLevel = try unboxer.unbox(key: "visibility_level")
@@ -63,16 +63,16 @@ public struct Project: Unboxable {
         self.wikiEnabled = try unboxer.unbox(key: "wiki_enabled")
         self.buildsEnabled = try unboxer.unbox(key: "builds_enabled")
         self.snippetsEnabled = try unboxer.unbox(key: "snippets_enabled")
-        self.createdAt = try unboxer.unbox(key: "created_at", formatter: DateFormatter.gitlab)
-        self.lastActivityAt = try unboxer.unbox(key: "last_activity_at", formatter: DateFormatter.gitlab)
+        self.createdAt = unboxer.unbox(key: "created_at", formatter: DateFormatter.gitlab)
+        self.lastActivityAt = unboxer.unbox(key: "last_activity_at", formatter: DateFormatter.gitlab)
         self.sharedRunnersEnabled = try unboxer.unbox(key: "shared_runners_enabled")
         self.lfsEnabled = try unboxer.unbox(key: "lfs_enabled")
         self.creatorId = try unboxer.unbox(key: "creator_id")
         self.namespace = unboxer.unbox(key: "namespace")
         self.avatarUrl = unboxer.unbox(key: "avatar_url")
-        self.starsCount = try unboxer.unbox(key: "stars_count")
+        self.starCount = try unboxer.unbox(key: "star_count")
         self.forksCount = try unboxer.unbox(key: "forks_count")
-        self.openIssuesCount = try unboxer.unbox(key: "open_issues_count")
+        self.openIssuesCount = unboxer.unbox(key: "open_issues_count")
         self.publicBuilds = try unboxer.unbox(key: "public_builds")
         self.onlyAllowMergeIfBuildSucceeds = try unboxer.unbox(key: "only_allow_merge_if_build_succeeds")
         self.requestAccessEnabled = try unboxer.unbox(key: "request_access_enabled")
